@@ -255,7 +255,7 @@ function App() {
             </div>
           </div>
           <div className="dest-card reveal reveal-delay-2">
-            <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80" alt="Maldivas" />
+            <img src="../Imagens/Maldivas2.jpg" alt="Maldivas" />
             <div className="dest-overlay"></div>
             <div className="dest-info">
               <p className="dest-region">Ásia · Sul</p>
