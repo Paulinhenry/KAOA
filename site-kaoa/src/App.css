@@ -241,7 +241,8 @@
 
   .hero-scroll {
     position: absolute;
-    bottom: 2.5rem; left: 50%;
+    bottom: 1rem; /* AUMENTE OU DIMINUA ESTE VALOR */
+    left: 50%;
     transform: translateX(-50%);
     z-index: 2;
     display: flex;
