@@ -7,6 +7,8 @@ import logoColorida from './assets/Kaoa Colorida.png';
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // 1. Adicionado estado para o menu mobile
+
   const cursorRef = useRef(null);
   const ringRef = useRef(null);
   const quoteBgRef = useRef(null);
@@ -124,11 +126,12 @@ function App() {
     };
   }, []);
 
-  // Função para Scroll Suave nos Links Internos
+  // Função para Scroll Suave nos Links Internos e fechar o menu
   const scrollToSection = (e, targetId) => {
     e.preventDefault();
     const target = document.querySelector(targetId);
     if (target) target.scrollIntoView({ behavior: 'smooth' });
+    setIsMenuOpen(false); // 2. Fecha o menu mobile ao clicar em um link
   };
 
   return (
@@ -145,31 +148,53 @@ function App() {
 
       {/* NAV */}
       <nav id="navbar" className={isScrolled ? 'scrolled' : ''}>
-        <a href="#hero" className="nav-logo" onClick={(e) => scrollToSection(e, '#hero')}>
-          <div className="logo-container">
-            {/* Logo Preta (aparece no topo) */}
-            <img 
-              src={logoPreta} 
-              alt="Kaoa Viagens" 
-              className={`logo-img logo-black ${isScrolled ? 'fade-out' : 'fade-in'}`} 
-            />
-            {/* Logo Colorida (aparece no scroll) */}
-            <img 
-              src={logoColorida} 
-              alt="Kaoa Viagens" 
-              className={`logo-img logo-color ${isScrolled ? 'fade-in' : 'fade-out'}`} 
-            />
-          </div>
-        </a>
-        <a href="#hero" className="nav-logo" onClick={(e) => scrollToSection(e, '#hero')}>Kaoa Viagens</a>
-        <ul className="nav-links">
-          <li><a href="#about" onClick={(e) => scrollToSection(e, '#about')}>Sobre</a></li>
-          <li><a href="#destinations" onClick={(e) => scrollToSection(e, '#destinations')}>Destinos</a></li>
-          <li><a href="#experience" onClick={(e) => scrollToSection(e, '#experience')}>Experiência</a></li>
-          <li><a href="#awards" onClick={(e) => scrollToSection(e, '#awards')}>Prêmios</a></li>
-          <li><a href="#contact" onClick={(e) => scrollToSection(e, '#contact')}>Contato</a></li>
-        </ul>
-        <a href="https://wa.me/554430562010" className="nav-cta" target="_blank" rel="noreferrer">Solicitar Orçamento</a>
+        <div className="nav-container"> {/* 3. Container adicionado para o flexbox funcionar com o botão */}
+          <a href="#hero" className="nav-logo" onClick={(e) => scrollToSection(e, '#hero')}>
+            <div className="logo-wrapper">
+              <img 
+                src={logoPreta} 
+                alt="Kaoa Viagens" 
+                className={`logo-img logo-black ${isScrolled ? 'fade-out' : 'fade-in'}`} 
+              />
+              <img 
+                src={logoColorida} 
+                alt="Kaoa Viagens" 
+                className={`logo-img logo-color ${isScrolled ? 'fade-in' : 'fade-out'}`} 
+              />
+            </div>
+          </a>
+          
+          {/* 4. Texto duplicado "Kaoa Viagens" removido daqui */}
+
+          {/* 5. Botão Menu Mobile (Hambúrguer) */}
+          <button 
+            className={`hamburger ${isMenuOpen ? 'active' : ''}`} 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Abrir menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}> {/* 6. Classe para abrir/fechar */}
+            <li><a href="#about" onClick={(e) => scrollToSection(e, '#about')}>Sobre</a></li>
+            <li><a href="#destinations" onClick={(e) => scrollToSection(e, '#destinations')}>Destinos</a></li>
+            <li><a href="#experience" onClick={(e) => scrollToSection(e, '#experience')}>Experiência</a></li>
+            <li><a href="#awards" onClick={(e) => scrollToSection(e, '#awards')}>Prêmios</a></li>
+            <li><a href="#contact" onClick={(e) => scrollToSection(e, '#contact')}>Contato</a></li>
+            
+            {/* CTA exclusivo do menu de celular */}
+            <li className="mobile-only-cta">
+              <a href="https://wa.me/554430562010" className="btn-primary" target="_blank" rel="noreferrer">
+                Solicitar Orçamento
+              </a>
+            </li>
+          </ul>
+          
+          {/* CTA do Desktop */}
+          <a href="https://wa.me/554430562010" className="nav-cta desktop-cta" target="_blank" rel="noreferrer">Solicitar Orçamento</a>
+        </div>
       </nav>
 
       {/* HERO */}

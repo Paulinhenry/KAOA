@@ -98,6 +98,14 @@
     padding: 1.2rem 4rem;
     border-bottom: 1px solid rgba(201,168,76,0.15);
   }
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
   .nav-logo {
     display: flex;
     align-items: center;
@@ -132,6 +140,7 @@
   }
   .nav-links a:hover { color: var(--blue); }
   .nav-links a:hover::after { width: 100%; }
+  
   .nav-cta {
     font-size: 0.65rem;
     font-weight: 400;
@@ -144,6 +153,25 @@
     transition: all 0.3s ease;
   }
   .nav-cta:hover { background: var(--blue); color: var(--dark-blue); }
+
+  /* ── HAMBURGUER & MOBILE DEFAULTS ── */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    padding: 10px;
+  }
+  .hamburger span {
+    width: 28px;
+    height: 2px;
+    background: var(--blue);
+    transition: all 0.3s ease;
+  }
+  .mobile-only-cta { display: none; }
 
   /* ── HERO ── */
   #hero {
@@ -245,7 +273,7 @@
 
   .hero-scroll {
     position: absolute;
-    bottom: 0.5rem; /* AUMENTE OU DIMINUA ESTE VALOR */
+    bottom: 0.5rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
@@ -753,26 +781,23 @@
   /* ── ANIMAÇÃO DAS LOGOS ── */
   .logo-container {
     position: relative;
-    width: 140px; /* Ajuste esta largura dependendo do tamanho real da sua logo */
-    height: 45px; /* Ajuste esta altura para não deformar */
+    width: 140px; 
+    height: 45px; 
   }
 
   .logo-img {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 45px;
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Garante que a logo não fique esticada/deformada */
+    object-fit: contain; 
     object-position: left center;
-    transition: opacity 0.4s ease; /* A mesma velocidade de transição da navbar */
+    transition: opacity 0.4s ease; 
   }
 
-  /* Controle da Logo Preta (Topo da página) */
   .logo-black.fade-in { opacity: 1; }
   .logo-black.fade-out { opacity: 0; }
-
-  /* Controle da Logo Colorida (Após rolar a página) */
   .logo-color.fade-in { opacity: 1; }
   .logo-color.fade-out { opacity: 0; }
 
@@ -780,7 +805,45 @@
   @media (max-width: 900px) {
     nav { padding: 1.5rem 2rem; }
     nav.scrolled { padding: 1rem 2rem; }
-    .nav-links { display: none; }
+    
+    /* Regras do Menu Mobile */
+    .desktop-cta { display: none; }
+    .hamburger { display: flex; }
+    
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+    .nav-links {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(10, 17, 40, 0.98);
+      backdrop-filter: blur(10px);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-20px);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 999;
+    }
+
+    .nav-links.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .nav-links a {
+      font-size: 1.2rem;
+      letter-spacing: 0.3em;
+    }
+
+    .mobile-only-cta { display: block; margin-top: 1rem; }
+
+    /* Lógica das outras seções para o mobile (mantida como a sua original) */
     #about { grid-template-columns: 1fr; gap: 4rem; padding: 6rem 2rem; }
     .about-stat { left: 0; top: -2rem; }
     .about-img-accent { right: 0; }
