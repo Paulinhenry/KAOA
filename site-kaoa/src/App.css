@@ -3,8 +3,8 @@
 
   :root {
   /* Substitua o #0077B6 pela cor principal exata do Instagram da empresa */
-  --blue: #0077B6;       /* Cor de Destaque: Azul Oceano */
-  --blue-light: #48CAE4; /* Tom mais claro para hover */
+  --blue: #009aed;       /* Cor de Destaque: Azul Oceano */
+  --blue-light: #005f71; /* Tom mais claro para hover */
   --blue-pale: #E0FBFC;  /* Fundo de destaque bem claro */
   
   --dark-blue: #0A1128;       /* Fundo Principal: Azul Marinho Escuro */
@@ -108,9 +108,11 @@
     letter-spacing: 0.25em;
     text-decoration: none;
     text-transform: uppercase;
+    text-align: center;
   }
   .nav-links { display: flex; gap: 3rem; list-style: none; }
   .nav-links a {
+    text-align: center;
     font-size: 0.7rem;
     font-weight: 400;
     letter-spacing: 0.2em;
@@ -747,7 +749,7 @@
   .reveal-delay-2 { transition-delay: 0.3s; }
   .reveal-delay-3 { transition-delay: 0.45s; }
   .reveal-delay-4 { transition-delay: 0.6s; }
-  
+
   /* ── ANIMAÇÃO DAS LOGOS ── */
   .logo-container {
     position: relative;
