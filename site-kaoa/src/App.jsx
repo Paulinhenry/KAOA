@@ -149,7 +149,7 @@ function App() {
       {/* NAV */}
       <nav id="navbar" className={isScrolled ? 'scrolled' : ''}>
         <div className="nav-container"> {/* 3. Container adicionado para o flexbox funcionar com o botão */}
-          <a href="#hero" className="nav-logo" onClick={(e) => scrollToSection(e, '#hero')}>
+         <a href="#hero" className="nav-logo" onClick={(e) => scrollToSection(e, '#hero')}>
             <div className="logo-wrapper">
               <img 
                 src={logoPreta} 
@@ -162,6 +162,8 @@ function App() {
                 className={`logo-img logo-color ${isScrolled ? 'fade-in' : 'fade-out'}`} 
               />
             </div>
+            {/* O Texto voltou aqui, ao lado da logo! */}
+            <span className="logo-text">Kaoa Viagens</span>
           </a>
           
           {/* 4. Texto duplicado "Kaoa Viagens" removido daqui */}
@@ -202,7 +204,7 @@ function App() {
         <div className={`hero-bg ${!isLoading ? 'loaded' : ''}`} id="heroBg"></div>
         <div className="hero-overlay"></div>
         <div className="hero-content">
-          <p className="hero-eyebrow">Agência de Viagens Premium — Umuarama, PR</p>
+          <p className="hero-eyebrow">Agência de Viagens KAOA — Umuarama, PR</p>
           <h1 className="hero-title">O Mundo<br />é <em>Imenso.</em><br />Descubra-o.</h1>
           <p className="hero-subtitle">Experiências que transcendem o ordinário. Roteiros criados para quem exige o melhor.</p>
           <div className="hero-actions">

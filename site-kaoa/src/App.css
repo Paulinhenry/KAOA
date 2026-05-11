@@ -109,15 +109,19 @@
   .nav-logo {
     display: flex;
     align-items: center;
+    gap: 15px; /* Esse é o espaço entre a imagem e o texto */
+    text-decoration: none;
+  }
+  
+  .logo-text {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.6rem;
     font-weight: 300;
     color: var(--blue);
     letter-spacing: 0.25em;
-    text-decoration: none;
     text-transform: uppercase;
-    text-align: center;
   }
+  
   .nav-links { display: flex; gap: 3rem; list-style: none; }
   .nav-links a {
     text-align: center;
@@ -152,7 +156,13 @@
     text-decoration: none;
     transition: all 0.3s ease;
   }
-  .nav-cta:hover { background: var(--blue); color: var(--dark-blue); }
+  
+  .nav-cta:hover { 
+    background: var(--blue-light); 
+    color: var(--white); 
+    border-color: var(--blue-light);
+    transform: translateY(-2px);
+  }
 
   /* ── HAMBURGUER & MOBILE DEFAULTS ── */
   .hamburger {
@@ -788,7 +798,7 @@
   .logo-img {
     position: absolute;
     top: 0;
-    left: 45px;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: contain; 
