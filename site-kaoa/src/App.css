@@ -147,7 +147,7 @@
   
   .nav-cta {
     font-size: 0.65rem;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--blue);
@@ -155,13 +155,14 @@
     padding: 0.7rem 1.8rem;
     text-decoration: none;
     transition: all 0.3s ease;
+    display: inline-block; /* Obrigatório para a animação funcionar */
   }
   
   .nav-cta:hover { 
-    background: var(--blue-light); 
-    color: var(--white); 
-    border-color: var(--blue-light);
-    transform: translateY(-2px);
+    background: var(--blue); /* Preenche com a sua cor azul principal */
+    color: var(--dark-blue); /* Deixa a letra escura para dar um contraste forte */
+    transform: translateY(-3px); /* Faz o botão dar um pulo suave para cima */
+    box-shadow: 0 10px 20px rgba(0, 154, 237, 0.25); /* Sombra elegante */
   }
 
   /* ── HAMBURGUER & MOBILE DEFAULTS ── */

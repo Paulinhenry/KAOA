@@ -150,7 +150,8 @@ function App() {
       <nav id="navbar" className={isScrolled ? 'scrolled' : ''}>
         <div className="nav-container"> {/* 3. Container adicionado para o flexbox funcionar com o botão */}
          <a href="#hero" className="nav-logo" onClick={(e) => scrollToSection(e, '#hero')}>
-            <div className="logo-wrapper">
+            {/* CORRIGIDO AQUI: className="logo-container" */}
+            <div className="logo-container">
               <img 
                 src={logoPreta} 
                 alt="Kaoa Viagens" 
@@ -162,7 +163,6 @@ function App() {
                 className={`logo-img logo-color ${isScrolled ? 'fade-in' : 'fade-out'}`} 
               />
             </div>
-            {/* O Texto voltou aqui, ao lado da logo! */}
             <span className="logo-text">Kaoa Viagens</span>
           </a>
           
