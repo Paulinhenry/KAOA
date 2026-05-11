@@ -255,7 +255,7 @@ function App() {
             </div>
           </div>
           <div className="dest-card reveal reveal-delay-2">
-            <img src="../Imagens/Maldivas2.jpg" alt="Maldivas" />
+            <img src="https://images.unsplash.com/photo-1512100356356-de1b84283e18?q=80&w=775&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Maldivas" />
             <div className="dest-overlay"></div>
             <div className="dest-info">
               <p className="dest-region">Ásia · Sul</p>
@@ -273,7 +273,7 @@ function App() {
             </div>
           </div>
           <div className="dest-card reveal reveal-delay-2">
-            <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdbc86?w=800&q=80" alt="Irlanda" />
+            <img src="https://images.unsplash.com/photo-1535560072261-658ffa11da52?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8SXJsYW5kYSUyMGUlMjBFc2NvY2lhfGVufDB8fDB8fHww" alt="Irlanda" />
             <div className="dest-overlay"></div>
             <div className="dest-info">
               <p className="dest-region">Europa · Ilhas Britânicas</p>
