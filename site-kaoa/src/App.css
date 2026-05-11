@@ -16,14 +16,18 @@
   --white: #FFFFFF;
 }
 
-  html { scroll-behavior: smooth; }
+  html, body { 
+    scroll-behavior: smooth; 
+    overflow-x: hidden; 
+    width: 100%; 
+    position: relative; 
+  }
 
   body {
     background: var(--dark-blue);
     color: var(--cream);
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    overflow-x: hidden;
     cursor: none;
   }
 
@@ -866,9 +870,14 @@
     .exp-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
     #awards { padding: 6rem 2rem; }
     .awards-inner { grid-template-columns: 1fr; gap: 4rem; }
-    .awards-badge { top: -1rem; right: -1rem; }
+    .awards-badge { top: -1rem; right: 0; } /* Tiramos o -1rem que vazava a tela */
     #contact { padding: 6rem 2rem; }
     .contact-details { flex-direction: column; gap: 2rem; align-items: center; }
     footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem; }
     .awards-strip { padding: 1.5rem 2rem; gap: 2rem; flex-wrap: wrap; justify-content: center; }
+    /* Corrige elementos vazando pelas laterais antes de aparecerem */
+    .reveal.reveal-left, 
+    .reveal.reveal-right {
+      transform: translateY(50px);
+    }
   }
