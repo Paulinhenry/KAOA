@@ -292,7 +292,7 @@ function App() {
         </div>
         <div className="exp-grid">
           <div className="exp-item reveal reveal-delay-1">
-            <span className="exp-number">+25</span>
+            <span className="exp-number">+10</span>
             <span className="exp-label">Anos no mercado</span>
             <div className="exp-divider"></div>
             <p className="exp-desc">Mais de duas décadas dedicadas a criar experiências de viagem incomparáveis.</p>
