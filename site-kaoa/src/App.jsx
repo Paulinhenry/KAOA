@@ -106,7 +106,7 @@ function App() {
         if (entry.isIntersecting && !entry.target.dataset.counted) {
           entry.target.dataset.counted = 'true';
           const text = entry.target.textContent;
-          if (text.includes('+25')) animateCounter(entry.target, 25, '+');
+          if (text.includes('+10')) animateCounter(entry.target, 10, '+');
           else if (text === '11') animateCounter(entry.target, 11, '');
           else if (text === '50') animateCounter(entry.target, 50, '');
         }
