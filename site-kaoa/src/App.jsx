@@ -209,7 +209,7 @@ function App() {
           <img className="about-img-main" src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=800&q=80" alt="Viagem de luxo" />
           <img className="about-img-accent" src="https://images.unsplash.com/photo-1542296332-2e4473faf563?w=600&q=80" alt="Destino premium" />
           <div className="about-stat">
-            <strong>+25</strong>
+            <strong>+10</strong>
             <span>Anos de<br />excelência</span>
           </div>
         </div>
@@ -416,7 +416,7 @@ function App() {
       {/* FOOTER */}
       <footer>
         <span className="footer-logo">Kaoa Viagens</span>
-        <p className="footer-copy">© 2024 Kaoa Viagens — Morais &amp; Souza Viagens e Turismo Ltda<br />Umuarama, Paraná, Brasil</p>
+        <p className="footer-copy">© 2026 Kaoa Viagens — Morais &amp; Souza Viagens e Turismo Ltda<br />Umuarama, Paraná, Brasil</p>
         <div className="footer-social">
           <a href="https://instagram.com/kaoaviagens" target="_blank" rel="noreferrer">Instagram</a>
           <a href="https://facebook.com/kaoaviagens" target="_blank" rel="noreferrer">Facebook</a>
