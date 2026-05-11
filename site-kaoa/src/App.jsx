@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css'; // Importe o seu CSS aqui
 
+import logoPreta from './assets/Kaoa Preto.png';
+import logoColorida from './assets/Kaoa Colorida.png';
+
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -142,6 +145,22 @@ function App() {
 
       {/* NAV */}
       <nav id="navbar" className={isScrolled ? 'scrolled' : ''}>
+        <a href="#hero" className="nav-logo" onClick={(e) => scrollToSection(e, '#hero')}>
+          <div className="logo-container">
+            {/* Logo Preta (aparece no topo) */}
+            <img 
+              src={logoPreta} 
+              alt="Kaoa Viagens" 
+              className={`logo-img logo-black ${isScrolled ? 'fade-out' : 'fade-in'}`} 
+            />
+            {/* Logo Colorida (aparece no scroll) */}
+            <img 
+              src={logoColorida} 
+              alt="Kaoa Viagens" 
+              className={`logo-img logo-color ${isScrolled ? 'fade-in' : 'fade-out'}`} 
+            />
+          </div>
+        </a>
         <a href="#hero" className="nav-logo" onClick={(e) => scrollToSection(e, '#hero')}>Kaoa Viagens</a>
         <ul className="nav-links">
           <li><a href="#about" onClick={(e) => scrollToSection(e, '#about')}>Sobre</a></li>
