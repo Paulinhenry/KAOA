@@ -831,7 +831,10 @@
 
     .nav-links {
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
+      top: 0; 
+      left: 0; 
+      right: 0; 
+      height: 100vh; /* Substitua o bottom: 0 por height: 100vh */
       background: rgba(10, 17, 40, 0.98);
       backdrop-filter: blur(10px);
       flex-direction: column;
