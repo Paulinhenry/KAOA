@@ -73,19 +73,6 @@ function App() {
         }
       }
     };
-  // Bloquear o scroll da página quando o menu mobile estiver aberto
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-
-    // Limpeza (cleanup) para garantir que o scroll volte ao normal se o componente desmontar
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, [isMenuOpen]);
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -138,7 +125,18 @@ function App() {
       counterObserver.disconnect();
     };
   }, []);
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
 
+    // Limpeza (cleanup) para garantir que o scroll volte ao normal se o componente desmontar
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isMenuOpen]);
   // Função para Scroll Suave nos Links Internos e fechar o menu
   const scrollToSection = (e, targetId) => {
     e.preventDefault();
